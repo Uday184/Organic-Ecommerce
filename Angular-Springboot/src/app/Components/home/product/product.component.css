@@ -1,0 +1,27 @@
+.myproduct {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: rgb(205, 210, 212);
+}
+.card-text{
+  height: 50px;
+  overflow: hidden;
+}
+
+.card {
+  margin-top: 20px;
+}
+
+.card-footer {
+  padding: 0;
+  background: #fff;
+}
+
+.card-img-top { 
+  height: 200px;
+}
+
+.card-footer button {
+  cursor: pointer;
+  text-transform: uppercase;
+}

@@ -1,0 +1,81 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/home">
+      <i class="fa fa-leaf" aria-hidden="true"></i>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home/cart">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <span class="badge badge-warning badge-pill">
+              {{ cartCount }}
+            </span>
+          </a>
+        </li>
+      </ul>
+      <div class="form-group">
+        <input type="text" 
+        class="form-control product-search" 
+        placeholder="Search By Product Name"
+        [(ngModel)]="searchTerm" />
+      </div>
+      <ul class="navbar-nav" *ngIf="loggedType!== 'home'">
+        <li ngbDropdown class="nav-item dropdown">
+          <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ userNm }}
+          </a>
+          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" routerLink="/home/order-history">My Orders</a>
+            <ng-container *ngIf="loggedType=== 'admin'">
+              <a class="dropdown-item" routerLink="/admin/order">Manage Orders</a>
+              <a class="dropdown-item" routerLink="/admin">Manage Products</a>
+            </ng-container>
+            <a class="dropdown-item" (click)="logout()">Log Out</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="row">
+  <div class="col-2">
+    <div class="list-group sticky-top">
+      <a
+      class="list-group-item list-group-item-action"
+      [class.active]="!category"
+      routerLink="/home"
+      >All Categories</a>
+      <a *ngFor="let cat of categories"
+      routerLink="/home"
+      [queryParams]="{ category : cat }"
+      class="list-group-item list-group-item-action"
+      [class.active]="category === cat">{{ cat }}</a>
+    </div>
+  </div>
+  <div class="col">
+    <div class="row">
+      <div class="col-3 align-left" *ngFor="let product of filteredProducts">
+        <app-product 
+        [product]="product" 
+        (productAddToCart)="addToCart($event)"
+        (prodAddOrSubtractStatus)="productAddRemoveStatus($event)"
+        >Loading...</app-product>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer></footer>

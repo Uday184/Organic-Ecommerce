@@ -1,0 +1,52 @@
+<app-navigation></app-navigation>
+<div class="container">
+  <br>
+  <table id="cart" 
+  class="table table-hover table-condensed table-borderless" 
+  *ngFor="let orderHistory of orderHistoryMap | keyvalue">
+    <thead>
+      <h3 style="color:brown"><strong><mark> Order Id: {{ orderHistory.key }}</mark></strong></h3>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let order of orderHistory.value">
+      <td>
+        {{ order.productNm }}
+      </td>
+      <td>{{ order.price | currency:'USD' }}</td>
+      <td>
+        {{ order.quantity }}
+      </td>
+      <td>
+        {{ order.approvalStatus }}
+      </td>
+    </tr>
+  </table>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer></footer>

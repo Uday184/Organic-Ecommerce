@@ -1,0 +1,39 @@
+.dropdown-toggle { 
+  cursor: pointer;
+}
+
+.navbar { 
+  border-bottom: 3px solid #e7e7e7;
+}
+
+.navbar-light .navbar-brand {
+  color: #c1d62e;
+}
+
+.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+  color: #b1c522;
+}
+
+.list-group-item.active {
+  background-color: #c1d62e;
+  border-color: #c1d62e;
+}
+
+.btn-primary {
+  background-color: #c1d62e;
+  border-color: #c1d62e;
+}
+
+.btn-primary:hover {
+  background-color: #b1c522;
+  border-color: #b1c522;
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+  background-color: #c1d62e;
+  border-color: #c1d62e;
+}
+
+.form-control:focus {
+  border-color: #c1d62e;
+}

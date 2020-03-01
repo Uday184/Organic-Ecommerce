@@ -1,0 +1,57 @@
+<app-navigation></app-navigation>
+<div class="container">
+    <br>
+    <div class="row">
+        <div class="col-6 align-left" *ngFor="let order of orderlist">
+            <div class="card shadow p-3 mb-5 bg-white rounded">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="card-title"><b>Order By:</b> {{order.orderBy}}</p>
+                            <p class="card-text"><b>Status:</b> {{order.orderStatus}}</p>
+                        </div>
+
+                        <div class="col-6">
+                            <button class="btn btn-secondary" (click)="approve(order.orderId)">Approve</button>
+                            <button style="margin-left: 10px;" class="btn btn-secondary" (click)="decline(order.orderId)">Decline</button>
+                        </div>
+                    </div>
+                    <br>
+                    <h5>Order Details</h5>
+                    <div class="row">
+                            <table id="cart" class="table table-hover table-condensed table-borderless">
+                                    <thead>
+                                      <tr>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th></th>
+                                      </tr>
+                                    </thead>
+                                    <tr *ngFor="let productDetails of order.products">
+                                      <td>
+                                        {{ productDetails.productNm }}
+                                      </td>
+                                      <td>
+                                        {{ productDetails.price  | currency:'USD' }}
+                                      </td>
+                                      <td>
+                                        {{ productDetails.quantity }}
+                                      </td>
+                                    </tr>
+                            </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer></footer>
