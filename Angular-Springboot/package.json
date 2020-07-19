@@ -27,7 +27,7 @@
     "font-awesome": "^4.7.0",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26",
-    "lodash": ">=4.17.13",
+    "lodash": ">=4.17.19",
     "lodash.mergewith": ">=4.6.2",
     "handlebars": ">=4.1.0",
     "js-yaml": ">=3.13.1",
